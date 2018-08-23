@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './app.js';
 
 const title = 'Minimal React Webpack Babel Setup';
 
@@ -11,7 +12,7 @@ const createRoot = () => {
 createRoot();
 
 ReactDOM.render(
-    <div>{title}</div>,
+    <App />,
     document.getElementById('root')
 );
 // async function getComponent() {
