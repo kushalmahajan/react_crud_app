@@ -1,5 +1,6 @@
 import React from 'react';
 import(/* webpackPrefetch: true */ /* webpackChunkName: "lodash" */ 'lodash');
+import Button from './base_components/button.js';
 
 export default class Prefetch extends React.Component {
     state = {};
@@ -13,7 +14,7 @@ export default class Prefetch extends React.Component {
         const { result } = this.state;
         return (
             <div>
-                <button onClick={this.handleClick}>Click Me</button>
+                <Button primary onClick={this.handleClick} title='Prefetch Click' />
                 {result && <span>{result}</span>}
             </div>
         );
