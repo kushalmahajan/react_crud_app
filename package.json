@@ -6,6 +6,7 @@
   "author": "Kushal Vedant Mahajan <kushal.mahajan@outlook.com>",
   "license": "MIT",
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "csv-loader": "^3.0.2",
     "file-loader": "^2.0.0",
