@@ -1,14 +1,27 @@
-import _ from 'lodash';
-import { cube } from './math.js';
-import './style.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-function component() {
-    var element = document.createElement('pre');
-    element.innerHTML = [
-        'Hello webpack!',
-        '5 cubed is equal to ' + cube(5)
-    ].join('\n\n');
-    return element;
+const title = 'Minimal React Webpack Babel Setup';
+
+const createRoot = () => {
+    var root = document.createElement('div');
+    root.setAttribute('id', 'root');
+    document.body.appendChild(root);
 }
+createRoot();
 
-document.body.appendChild(component());
+ReactDOM.render(
+    <div>{title}</div>,
+    document.getElementById('root')
+);
+// async function getComponent() {
+//     var element = document.createElement('div');
+//     const _ = await import(/* webpackChunkName: "lodash" */ 'lodash');
+//     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+//     return element;
+// }
+// getComponent().then(component => {
+//     document.body.appendChild(component);
+// });
+
+
