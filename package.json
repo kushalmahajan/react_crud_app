@@ -15,14 +15,12 @@
     "webpack": "^4.17.0",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",
+    "webpack-merge": "^4.1.4",
     "xml-loader": "^1.2.1"
   },
   "scripts": {
-    "build": "webpack",
-    "watch": "webpackj --watch",
-    "start": "webpack-dev-server --open",
-    "dev": "yarn build -- --mode=development",
-    "prod": "yarn build -- --mode=production"
+    "build": "webpack --config webpack/webpack.prod.js",
+    "start": "webpack-dev-server --open --config webpack/webpack.dev.js"
   },
   "dependencies": {
     "lodash": "^4.17.10"
