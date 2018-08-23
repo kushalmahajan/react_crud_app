@@ -14,10 +14,13 @@
     "style-loader": "^0.22.1",
     "webpack": "^4.17.0",
     "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
     "xml-loader": "^1.2.1"
   },
   "scripts": {
     "build": "webpack",
+    "watch": "webpackj --watch",
+    "start": "webpack-dev-server --open",
     "dev": "yarn build -- --mode=development",
     "prod": "yarn build -- --mode=production"
   },
