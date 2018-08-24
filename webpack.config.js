@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+//const GoogleFonts = require('google-fonts-webpack-plugin'); // Plugin has an issue Not working
 
 module.exports = {
     entry: {
@@ -12,6 +13,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Output Management'
         })
+        // new GoogleFonts({
+        //     fonts: [
+        //         { family: 'Nunito Sans', variants: ["400", "600"] },
+        //         { family: "Roboto" }
+        //     ]
+        // })
         // new BundleAnalyzerPlugin()
     ],
     output: {
@@ -41,11 +48,15 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: [
-                    'file-loader'
-                ]
-            },
+                test: /\.(woff(2)?|ttf|eot|svg)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/'
+                    }
+                }]
+            }
             // {
             //     test: /\.(csv|tsv)$/,
             //     use: [
