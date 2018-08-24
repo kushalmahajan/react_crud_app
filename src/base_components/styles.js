@@ -38,6 +38,10 @@ const button = styled.button`
         border: red;
         border-radius: 4px;
     `}
+    &:hover{
+        cursor: pointer;
+    }
+    outline: 0;
 
 `;
 export default button;
