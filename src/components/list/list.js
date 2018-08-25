@@ -9,7 +9,6 @@ const MoviesList = (props) => {
             {
                 (data || []).map((item, i) => <Item key={i} data={item} />)
             }
-
         </ul>
     )
 }

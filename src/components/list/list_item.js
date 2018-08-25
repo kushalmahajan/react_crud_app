@@ -6,7 +6,7 @@ import Col from '../../base_components/col.js';
 import male from './male.png';
 import female from './female.png';
 import { format } from '../../utils/date.js';
-
+import { Link } from 'react-router-dom';
 // const getIcon = async (gender) => {
 //     let placeholder = '';
 //     if (gender === 'male') {
@@ -28,7 +28,7 @@ const Item = (props) => {
                         <img width='40' height='40' src={gender === 'male' ? male : female} />
                     </Col>
                     <Col sm={10}>
-                        <h4>{name}</h4>
+                        <Link to={{ pathname: `/people/${name.split(' ').join('-')}`, search: url }}><h4>{name}</h4></Link>
 
                         <Row className='text-muted'>
                             <Col sm={3}>Gender: <span className='font-black'>{gender}</span></Col>
