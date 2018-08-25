@@ -4,7 +4,7 @@ import './style.css';
 import Filters from './components/filters/filters.js';
 import MoviesList from './components/list/list.js';
 import Pagination from './components/pagination/pagination.js';
-import isEmpty from 'lodash/isEmpty';
+// import isEmpty from 'lodash/isEmpty';
 import Loader from './base_components/loader/loader.js';
 import Container from './base_components/card/card.js';
 
@@ -47,7 +47,8 @@ class App extends React.Component {
     sortData = (key = this.state.sortKey, data = this.state.list) => {
         console.log(data, key);
         if (key === 'height') {
-            return data.sort((a, b) => b[key] - a[key]);
+            console.log(data.sort((a, b) => b[key] - a[key]));
+            return data.sort((a, b) => parseInt(b[key], 10) - parseInt(a[key], 10));
         }
         if (key === 'created') {
             return data.sort((a, b) => new Date(b[key]) - new Date(a[key]));

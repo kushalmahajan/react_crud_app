@@ -9,7 +9,7 @@ const pagination = (props) => {
                 <span>{props.page} of {props.data.count}</span>
                 <div className='group' style={{ display: 'inline-block', marginLeft: '15px' }}>
                     <Button default onClick={() => props.handler(true)} title='Prev' disabled={props.page <= 1} />
-                    <Button default onClick={() => props.handler(false)} title='Next' disabled={props.count === 1} />
+                    <Button className='m-l-5' default onClick={() => props.handler(false)} title='Next' disabled={props.count === 1} />
                 </div>
             </div>
 
