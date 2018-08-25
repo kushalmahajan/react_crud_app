@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from './list_item.js';
 
+
 const MoviesList = (props) => {
     const { data } = props;
     return (

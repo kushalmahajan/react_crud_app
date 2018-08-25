@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app.js';
-
+import { BrowserRouter } from 'react-router-dom';
 
 const createRoot = () => {
     var root = document.createElement('div');
@@ -11,7 +11,7 @@ const createRoot = () => {
 createRoot();
 
 ReactDOM.render(
-    <App />,
+    <BrowserRouter><App /></BrowserRouter>,
     document.getElementById('root')
 );
 // async function getComponent() {

@@ -13,17 +13,18 @@ class App extends React.Component {
         page: 1,
         list: [],
         pagination: {},
-        isLoading: true
+        isLoading: true,
+        sortKey: 'created'
     }
     render() {
-        const title = 'Minimal React Webpack Babel Setup';
+        const title = 'Minimal React Webpack (4) Babel Setup | List with pagination and sorting | React router 4';
         const { page, pagination, list, isLoading } = this.state;
         return (
             <div>
                 <Header><h3 style={{ fontSize: '18px' }}>{title}</h3></Header>
                 <div className='p-15'>
                     <Container>
-                        <Filters />
+                        <Filters sortKey={this.state.sortKey} handleSort={this.handleSort} />
                         {
                             isLoading ? (
                                 <Loader />
@@ -39,13 +40,38 @@ class App extends React.Component {
             </div>
         );
     }
+    handleSort = (key) => {
+        const data = this.sortData(key);
+        this.setState({ sortKey: key, list: data });
+    }
+    sortData = (key = this.state.sortKey, data = this.state.list) => {
+        console.log(data, key);
+        if (key === 'height') {
+            return data.sort((a, b) => b[key] - a[key]);
+        }
+        if (key === 'created') {
+            return data.sort((a, b) => new Date(b[key]) - new Date(a[key]));
+        }
+        return data.sort((a, b) => {
+            var nameA = a[key].toUpperCase();
+            var nameB = b[key].toUpperCase();
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            return 0;
+        });
+    }
     getData = async () => {
         try {
             const data = await fetch(`https://swapi.co/api/people?page=${this.state.page}&format=json`);
             const jsonData = await data.json();
             const { count, next, previous } = jsonData;
             const pagination = { count, next, previous };
-            this.setState({ list: jsonData.results, pagination, isLoading: false });
+            const list = this.sortData(this.state.sortKey, jsonData.results);
+            this.setState({ list, pagination, isLoading: false });
         } catch (err) {
             console.log(err);
         }

@@ -1,13 +1,26 @@
 @font-face {
+    font-family: 'NunitoSansLight';
+     /* Used ttf for now. Similar suppport for woff woff2 eot to be followed */
+    src: url('./fonts/NunitoSans-Light.ttf');
+    font-weight: 300;
+    font-size: normal;
+}
+@font-face {
     font-family: 'NunitoSans';
-    /* Used ttf for now. Similar suppport for woff woff2 eot to be followed */
-    src: url('./fonts/NunitoSans-Bold.ttf'),
-         url('./fonts/NunitoSans-Regular.ttf'),
-         url('./fonts/NunitoSans-Light.ttf'); 
+    src: url('./fonts/NunitoSans-Regular.ttf'); 
+    font-weight: 400;
+    font-size: normal;  
+}
+@font-face {
+    font-family: 'NunitoSansBold';
+    src: url('./fonts/NunitoSans-Bold.ttf');
+    font-weight: 600;
+    font-size: normal;
 }
 html, body{
     margin: 0;
     font-family: 'NunitoSans', sans-serif;
+    font-size: 14px;
 }
 h1, h2, h3, h4, h4 , h5, h6{
     margin: 0;
@@ -26,6 +39,9 @@ ul, li{
 .m-b-15{
     margin-bottom: 15px;
 }
+.m-t-30{
+    margin-top: 30px;
+}
 .group:after{
     content: '';
     clear: both;
@@ -36,6 +52,18 @@ ul, li{
     color: #999;
     /* width: calc(100% - 630px); */
 }
-.fontBlack{
+.light-font{
+    font-weight: 'NunitoSansLight';
+}
+.font-black{
     color: #333;
+}
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+.text-right{
+    text-align: right;
 }

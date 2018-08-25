@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 const button = styled.button`
     background: none;
     border: none;
-    padding: 6px 30px;
+    padding: 4px 20px;
     font-size: 14px;
     margin: 20px 0;
     ${props => props.link && css`
