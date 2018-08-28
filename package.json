@@ -1,7 +1,7 @@
 {
-  "name": "offline_first_app",
+  "name": "react_app",
   "version": "1.0.0",
-  "description": "An offline first, minimalistic webpack configured, React, Typescript, Express/Node, Grahphql app with testing frameworks support enabled, Server Side Rendered App with one of the best of the performance load time in this stack.",
+  "description": "A  basic React, Webpack app with React router 4",
   "private": true,
   "author": "Kushal Vedant Mahajan <kushal.mahajan@outlook.com>",
   "license": "MIT",
