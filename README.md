@@ -1,4 +1,4 @@
-*Important* - This repo is just a Showcase code for skipping lengthy and repeated assignments. Actually just a push from one of few assignments done as a part of my intyerview rounds ( By no way a measure of what I've done in actual React projects ). Other details in Resume. 
+*Important* - This repo is just a Showcase code for skipping lengthy and repeated assignments. Infact this too is an effort pushed to github from one of a few assignments done as part of my interviews ( By no way a measure of what I've done in actual React projects ). Other details in Resume mentioned objectively.
 
 # react_crud_app
 
